@@ -1,0 +1,27 @@
+name: 'ansible-later'
+description: 'Lint ansible roles/playbooks with ansible-later'
+author: 'patrickjahns'
+inputs:
+  config:
+    description: |
+      Path to the ansible-later configuration file to use.
+      If omitted, ansible-later will look for the default .later.yml file,
+      or if not found, fallback to the inbuilt default configuration
+    required: false
+  path:
+    description: |
+      The path of the files/folders to be inspected by ansible-later
+
+      Examples:
+        path: tasks     - will lint all files in the folder tasks
+        path: **/*.yml  - will lint all files ending with .yml in all subfolders
+
+      If omitted, ansible-later will try to lint all file in the working directory
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'docker://patrickjahns/ansible-later-action'
+branding:
+  icon: 'check-circle'
+  color: 'orange'

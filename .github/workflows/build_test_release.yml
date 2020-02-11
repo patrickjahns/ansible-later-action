@@ -1,0 +1,30 @@
+name: Test & Build & Release
+on:
+  push:
+    branches:
+      - master
+  release:
+    types:
+      - published
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build container
+        run: docker build -t patrickjahns/ansible-later-action:${{ github.sha }} .
+      - name: test container
+        run: docker run -e GITHUB_WORKSPACE=/tmp --rm patrickjahns/ansible-later-action:${{ github.sha }}
+      - name: login docker registry
+        run: echo ${{ secrets.DOCKER_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+      - name: tag and push latest
+        run: |
+          docker tag patrickjahns/ansible-later-action:${{ github.sha }} patrickjahns/ansible-later-action:latest
+          docker push patrickjahns/ansible-later-action:latest
+      - name: tag and push current release tag
+        if: github.event_name == 'release' &&  github.event.action == 'published'
+        run: |
+          docker tag patrickjahns/ansible-later-action:${{ github.sha }} patrickjahns/ansible-later-action:${{ github.event.release.tag_name }}
+          docker push patrickjahns/ansible-later-action:${{ github.event.release.tag_name }}
