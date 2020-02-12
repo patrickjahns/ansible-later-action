@@ -8,7 +8,7 @@ declare -x INPUT_CONFIG
 if [ -n "${INPUT_CONFIG}" ]; then
   if [ ! -f "${INPUT_CONFIG}" ]; then
     echo "error: config file ${INPUT_CONFIG} not found"
-    exit 0
+    exit 1
   fi
   INPUT_CONFIG=" -c ${INPUT_CONFIG}"
 fi
