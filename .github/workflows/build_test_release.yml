@@ -16,7 +16,7 @@ jobs:
       - name: build container
         run: docker build -t patrickjahns/ansible-later-action:${{ github.sha }} .
       - name: test container
-        run: docker run -e GITHUB_WORKSPACE=/tmp --rm patrickjahns/ansible-later-action:${{ github.sha }}
+        run: tests/test.sh ${{ github.sha }}
       - name: login docker registry
         run: echo ${{ secrets.DOCKER_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
       - name: tag and push latest

@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: True
+  become_user: root
+  tasks:
+    - name: Execute debug command
+      debug:
+        msg: "test"
+
+...
