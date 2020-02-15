@@ -7,11 +7,11 @@ LABEL "maintainer"="Patrick Jahns <github@patrickjahns.de>" \
       "com.github.actions.description"="Run ansible-later" \
       "com.github.actions.icon"="check-circle" \
       "com.github.actions.color"="orange"
-
+COPY requirements.txt /tmp/requirements.txt
 RUN apk --no-cache add --virtual .build-deps build-base libffi-dev libressl-dev && \
     apk --no-cache add git bash && \
     pip install --upgrade --no-cache-dir pip && \
-    pip install --no-cache-dir ansible-later && \
+    pip install --no-cache-dir -r /tmp/requirements.txt && \
     apk del .build-deps && \
     rm -rf /var/cache/apk/* && \
     rm -rf /root/.cache/
