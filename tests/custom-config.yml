@@ -1,0 +1,7 @@
+---
+rules:
+  exclude_files:
+    - custom-config.yml
+  exclude_filter:
+    - LINT0009
+    - ANSIBLE0014

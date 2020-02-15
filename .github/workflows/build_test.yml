@@ -13,4 +13,4 @@ jobs:
       - name: build container
         run: docker build -t patrickjahns/ansible-later-action:${{ github.sha }} .
       - name: test container
-        run: docker run -e GITHUB_WORKSPACE=/tmp --rm patrickjahns/ansible-later-action:${{ github.sha }}
+        run: tests/test.sh ${{ github.sha }}
