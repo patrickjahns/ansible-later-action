@@ -1,7 +1,9 @@
 # 🚀 Ansible Later for Github Action
 [![License: MIT](https://img.shields.io/github/license/patrickjahns/ansible-later-action)](LICENSE)
+![Test & Build & Release](https://github.com/patrickjahns/ansible-later-action/workflows/Test%20&%20Build%20&%20Release/badge.svg?event=release)
+[![GitHub tag](https://img.shields.io/github/tag/patrickjahns/ansible-later-action.svg)](https://github.com/patrickjahns/ansible-later-action/tags)
 
-[GitHub Action](https://github.com/features/actions) for linting ansible roles/playbooks with [ansible-later](https://github.com/xoxys/ansible-later).
+[GitHub Action](https://github.com/features/actions) for linting ansible roles/playbooks with [ansible-later](https://github.com/xoxys/ansible-later)
 
 ## Usage
 
