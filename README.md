@@ -3,7 +3,7 @@
 ![Test & Build & Release](https://github.com/patrickjahns/ansible-later-action/workflows/Test%20&%20Build%20&%20Release/badge.svg?event=release)
 [![GitHub tag](https://img.shields.io/github/tag/patrickjahns/ansible-later-action.svg)](https://github.com/patrickjahns/ansible-later-action/tags)
 
-[GitHub Action](https://github.com/features/actions) for linting ansible roles/playbooks with [ansible-later](https://github.com/xoxys/ansible-later)
+[GitHub Action](https://github.com/features/actions) for linting ansible roles/playbooks with [ansible-later](https://github.com/thegeeklab/ansible-later)
 
 ## Usage
 
@@ -36,14 +36,14 @@ The following optional variables can be defined
 
   The path of the files/folders to be inspected by ansible-later
 
-  **examples:** 
+  **examples:**
     - lint all files in the folder `tasks`
     ```yaml
       path: tasks
     ```
-    - lint all files ending with .yml in all subfolders 
+    - lint all files ending with .yml in all subfolders
     ```yaml
-      path: **/*.yml 
+      path: **/*.yml
     ```
 
   If omitted, ansible-later will try to lint all file in the working directory
