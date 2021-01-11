@@ -1,4 +1,4 @@
-ansible==2.10.4
+ansible==2.10.5
 ansible-later==0.3.12
 Jinja2==2.11.2
 jsonschema==3.2.0
