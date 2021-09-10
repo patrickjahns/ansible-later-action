@@ -8,7 +8,7 @@ LABEL "maintainer"="Patrick Jahns <github@patrickjahns.de>" \
       "com.github.actions.icon"="check-circle" \
       "com.github.actions.color"="orange"
 COPY requirements.txt /tmp/requirements.txt
-RUN apk --no-cache add --virtual .build-deps build-base libffi-dev libressl-dev && \
+RUN apk --no-cache add --virtual .build-deps build-base libffi-dev libressl-dev gcc musl-dev python3-dev cargo && \
     apk --no-cache add git bash && \
     pip install --upgrade --no-cache-dir pip && \
     pip install --no-cache-dir -r /tmp/requirements.txt && \
