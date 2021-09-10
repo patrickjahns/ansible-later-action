@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.9-alpine
 
 LABEL "maintainer"="Patrick Jahns <github@patrickjahns.de>" \
       "repository"="https://github.com/patrickjahns/ansible-later-action" \
