@@ -1,5 +1,5 @@
 ansible==4.7.0
-ansible-later==0.5.14
+ansible-later==1.4.4
 Jinja2==3.0.2
 jsonschema==3.2.0
 PyYAML==5.4.1
